@@ -1,0 +1,168 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{cite}
+\usepackage[a4paper, margin=1in]{geometry} % Set smaller margins
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+\title{Driver Drowsiness Detection using Deep Learning Techniques}
+\author{\IEEEauthorblockN{Dr. David Raj Micheal}
+\IEEEauthorblockA{\textit{Division of Mathematics} \\
+\textit{School of Advanced Sciences}\\
+\textit{Vellore Institute of Technology Chennai}\\
+\textit{Tamil Nadu – 600127}\\ 
+\href{mailto:davidraj.micheal@vit.ac.in}{davidraj.micheal@vit.ac.in}
+}
+
+
+
+\and
+\IEEEauthorblockN{Roma Anand Joshi}
+\IEEEauthorblockA{\textit{Division of Mathematics} \\
+\textit{School of Advanced Sciences}\\
+\textit{Vellore Institute of Technology Chennai}\\
+\textit{Tamil Nadu – 600127}\\ 
+\href{mailto:romaanand.joshi2023@vitstudent.ac.in}{romaanand.joshi2023@vitstudent.ac.in}
+}
+}\maketitle
+
+\begin{abstract} This project outlines the creation and execution of a Convolutional Neural Network (CNN) specifically designed for classifying images that depict yawning and various eye states. By utilizing a carefully curated dataset of labeled images, the model was trained to identify and differentiate distinct patterns that correspond to yawning and non-yawning states. The methodology employed in this project encompassed several critical steps, including data preprocessing to ensure the images were suitable for analysis, designing an effective model architecture, and training the model using appropriate callbacks to optimize performance. The evaluation was conducted on a separate test set to assess the model's accuracy and reliability. The results demonstrated that the CNN achieved a commendable accuracy rate, highlighting its potential applications in real-world scenarios, particularly in fatigue detection systems. Looking forward, future research will aim to enhance the robustness of the model by incorporating advanced techniques such as transfer learning, which could significantly improve its performance across a wider range of datasets. This exploration not only contributes to the field of image classification but also opens avenues for practical applications in monitoring fatigue levels in various environments.
+
+ \end{abstract}
+
+ \section{Introduction} 
+
+\ In recent years, the application of deep learning techniques in image processing has significantly revolutionized various domains, such as healthcare, security, and human-computer interaction. This project specifically focuses on the development of a Convolutional Neural Network (CNN) model to classify images from a dataset containing yawning and different eye states. Accurately identifying yawning can have substantial implications in multiple fields, including driver safety monitoring and fatigue detection in various professions. For instance, fatigue and drowsiness detection can play a crucial role in preventing accidents caused by sleepy drivers on the road. By leveraging the power of CNNs, this project aims to create a highly efficient model capable of distinguishing between different states based on visual input. CNNs have demonstrated remarkable performance in image classification tasks due to their ability to automatically learn and extract features from raw pixel data. The hierarchical structure of CNNs enables them to recognize complex patterns and representations in images, making them particularly suitable for this application. The project involves preprocessing the image dataset, building and training the CNN model, and evaluating its performance on test data. By employing techniques such as data augmentation, dropout, and batch normalization, the model's generalization capability and robustness can be further improved. Ultimately, this project endeavors to contribute to the advancement of fatigue detection systems, thereby enhancing safety and productivity in various sectors. The findings and outcomes of this project have the potential to inspire further research and development in the field of deep learning-based image classification and its real-world applications.
+
+\section{Literature Review}
+Driver drowsiness monitoring is a vehicle safety technology that prevents driver drowsiness during collisions. Several studies have revealed that tiredness causes about 20\% of all road injuries, and up to 50\% on particular highways. In the sphere of crash avoidance technologies, the manufacture of wheel drowsiness detection or prevention technology is a huge difficulty. [1] Numerous strategies were explored to improve the accuracy of the driver drowsiness system detection. A model to identify drowsiness based on electroencephalography (EEG) data has been suggested by Mardi et al.  The logarithm of the signal's energy and extracted chaotic properties are used to distinguish between alertness and drowsiness. Artificial neural network was used for classification and yielded 83.3\% accuracy. [2] Krajewski et al. created a model that uses steering patterns to determine tiredness. Using sophisticated signal processing techniques, they created three feature sets for this model in order to capture the steering patterns. When performance is assessed, tiredness is detected with an accuracy of 86\%. [3] Danisman et al. developed a method to detect a drowsiness based on changes in eye blink rate. Here Viola Jones detection algorithm was used to detect face region from the images. Then neural network-based eye detector was used to find the location of the pupils. Calculated the no of blinks per minute if blinks increase indicated that driver becomes drowsy. [4] Dwivedi et al. developed a model to find the drowsiness using CNNs. In this method convolutional neural network was used to capture the latent features then SoftMax layer was used for classification and yielded 78\% of accuracy. [5] An Eye-tracking based driver drowsiness system was proposed by Said et al. In this work the system finds the driver’s drowsiness and rings the alarm to alert to the driver. In this work, Viola Jones model was used to detect the face region and eye region. It has produced an accuracy of 82\% in indoor tests and an accuracy of 72.8\% for outdoor environment. [6] The system proposed by Kumar and Patra (2018) utilizes a webcam to capture video of the driver’s face. The video frames are processed to extract visual features such as eye aspect ratio, mouth opening ratio, and nose length ratio. These features are indicative of the driver’s state of alertness. The system employs image processing techniques to detect and track facial landmarks, which are then used to compute the aforementioned ratios. [7] Pratama, Ardiyanto, and Adji (2017) provide a comprehensive review of driver drowsiness detection methods based on image analysis, bio-signals, and driver behavior which involve analyzing visual cues such as eye closure, head position, and facial expressions. [8] The study by Bamidele et al. (2019) demonstrates the feasibility of a non-intrusive, low-cost driver drowsiness detection system using face and eye tracking. The integration of machine learning models enhances the system’s accuracy, making it a promising solution for real-world applications. The KNN model achieved an accuracy of 72.25\% with a miss rate of 16.67\%, while the ANN model obtained an accuracy of 71.61\% and a miss rate of 14.44\%. These results indicate the potential of using face and eye tracking combined with machine learning for effective drowsiness detection. [9] The study by Manu (2016) contributes to the field of driver drowsiness detection by presenting a real-time system that effectively monitors facial features to detect signs of fatigue. The integration of facial detection, eye tracking, and yawning detection with a CNN enhances the system’s accuracy and reliability. [10]
+
+\section{Objectives}
+
+\begin{enumerate}
+    \item Design and implement a CNN model capable of accurately detecting driver drowsiness using image data.
+
+    \item Leverage the CNN's ability to automatically extract relevant features from raw pixel data, focusing on detecting signs of drowsiness such as yawning and eye closure.
+
+    \item  Identify areas for future work, including improving model robustness and exploring transfer learning techniques to enhance performance across diverse datasets.
+
+\end{enumerate}
+
+\section{Dataset Description}
+\ The Yawn-Eye Dataset is designed for drowsiness detection and driver safety applications. This dataset contains 6924 images and videos of drivers in various states, such as yawning, eye closure, and open eyes. These visual cues are crucial for training models to detect driver fatigue and prevent accidents caused by drowsiness.
+
+\ The dataset is rich with diversity, capturing drivers with different facial characteristics. This includes variations in gender, presence of glasses or sunglasses, and multiple ethnicities. Such diversity ensures that the models trained on this dataset are robust and can generalize well across different population groups.
+
+\ Images are captured in real-world driving scenarios, where drivers are engaged in different activities. This includes talking, singing, remaining silent, and yawning. This variety helps create a realistic dataset, making the trained models more applicable to real-world situations.
+
+\ To ensure the data is useful for training Convolutional Neural Network (CNN) models, the images are typically annotated with labels indicating the driver's state. These labels help in supervised learning, where the model learns to associate visual patterns with specific states.
+
+\ This dataset is particularly useful for developing systems that enhance driver safety by providing real-time alerts and interventions when signs of drowsiness are detected. The ultimate goal is to reduce the number of accidents caused by sleepy drivers, thereby improving road safety and saving lives.
+
+\ The Yawn-Eye Dataset serves as a valuable resource for researchers and developers working on advanced driver assistance systems (ADAS) and other applications in the field of computer vision and artificial intelligence.
+
+\section{Methodology}
+
+\begin{enumerate}
+    \item \textbf{Data Collection:} The first step involved gathering a dataset containing images depicting yawning and eye states. This dataset was divided into training and testing subsets.
+    
+    \item \textbf{Data Preprocessing:} Images were preprocessed by resizing them to a uniform size (256x256 pixels) and normalizing pixel values to enhance model performance. Labels were encoded into categorical format using LabelEncoder.
+    
+    \item \textbf{Model Design:} A Convolutional Neural Network (CNN) architecture was designed with multiple convolutional layers followed by pooling layers to extract features from the images. The architecture included dropout layers to prevent overfitting and batch normalization layers to stabilize training.
+    
+    \item \textbf{Model Training:} The CNN was trained using the training dataset with callbacks such as EarlyStopping and ModelCheckpoint to monitor validation accuracy and save the best-performing model weights.
+    
+    \item \textbf{Model Evaluation:} After training, the model's performance was evaluated on the test dataset using metrics such as accuracy and loss. Visualizations of training history were created to analyze performance trends.
+\end{enumerate}
+
+
+\begin{figure}[h]
+    \centering % Centers the image
+    \includegraphics[width=0.7\linewidth]{Methodology_DL.jpg} 
+    \caption{Methodology of the project} 
+    \label{fig:example} % Optional: label for referencing the figure in the text
+\end{figure}
+
+\section{Architecture of the model}
+This is the proposed architecture of the model.
+
+\begin{figure}[h]
+    \centering % Centers the image
+    \includegraphics[width=0.7\linewidth]{architecture.jpg} 
+    \caption{Architecture of the proposed model.} 
+    \label{fig:example} % Optional: label for referencing the figure in the text
+\end{figure}
+
+\section{Results}
+An accuracy of \textbf{94.23\%} was achieved using the convolution neural network (CNN) model. The trained CNN model achieved an impressive accuracy rate on the test dataset, demonstrating its ability to effectively classify images based on yawning and eye states. Also, The loss function decreased steadily over epochs during training, indicating successful learning. 
+
+\begin{figure}[h]
+    \centering % Centers the image
+    \includegraphics[width=0.7\linewidth]{Accuracy_graph.jpg} 
+    \caption{Accuracy graph of training and testing datasets.} 
+    \label{fig:example} % Optional: label for referencing the figure in the text
+\end{figure}
+
+\begin{figure}[h]
+    \centering % Centers the image
+    \includegraphics[width=0.7\linewidth]{Loss_graph.jpg} 
+    \caption{Loss graph of training and testing datasets.} 
+    \label{fig:example} % Optional: label for referencing the figure in the text
+\end{figure}
+
+As you can see in the above figure, the loss keeps on decreasing as the model trains.
+
+\section{Future Work}
+
+Future work will focus on several areas for improvement:
+
+\begin{itemize}
+    
+    \item \textbf{Transfer Learning:} Exploring transfer learning by utilizing pre-trained models (e.g., VGG16 or ResNet) could significantly boost performance by leveraging learned features from larger datasets.
+    
+    \item \textbf{Broader Datasets:} Testing the model with more diverse datasets that include various lighting conditions and angles may improve its robustness in real-world scenarios.
+
+    \item \textbf{Deployment in Mobile Applications:} Adapting the model for deployment in mobile applications can facilitate accessibility and usability in everyday settings, allowing users to monitor their fatigue levels conveniently.
+\end{itemize}
+
+
+
+
+\section{Conclusion}
+This project successfully demonstrated the significant potential of Convolutional Neural Networks (CNNs) in the classification of images related to yawning and various eye states. The CNN model developed during this research achieved impressive accuracy rates when evaluated on unseen data, underscoring its effectiveness for practical applications in fatigue detection systems. Such systems are crucial for ensuring safety in environments where alertness is vital, such as in transportation and healthcare settings.
+
+Overall, this work contributes valuable insights into the intersection of image processing and deep learning technologies. It lays the groundwork for future research and applications aimed at monitoring fatigue and enhancing safety across various domains. By continuing to refine and expand upon this model, we can unlock new possibilities for automated fatigue detection and improve overall human well-being in critical situations.
+
+
+%\section{References}
+\begin{thebibliography}{00}
+\bibitem{b1} Liu, W., Qian, J., Yao, Z., Jiao, X., \& Pan, J. (2019). Convolutional two-stream network using multi-facial feature fusion for driver fatigue detection. Future Internet, 11(5), 115.
+
+\bibitem{b2} Mardi, Z., Ashtiani, S. N. M., \& Mikaili, M. (2011). EEG-based drowsiness detection for safe driving using chaotic features and statistical tests. Journal of Medical Signals \& Sensors, 1(2), 130-137.
+
+\bibitem{b3} Krajewski, J., Sommer, D., Trutschel, U., Edwards, D., \& Golz, M. (2009, June). Steering wheel behavior based estimation of fatigue. In Driving assessment conference (Vol. 5, No. 2009). University of Iowa.
+
+\bibitem{b4} Danisman, T., Bilasco, I. M., Djeraba, C., \& Ihaddadene, N. (2010, October). Drowsy driver detection system using eye blink patterns. In 2010 International Conference on Machine and Web Intelligence (pp. 230-233). IEEE.
+
+\bibitem{b5} Dwivedi, K., Biswaranjan, K., Sethi, A. (2014). Drowsy driver detection using representation learning. Advance Computing Conference (IACC), IEEE, pp. 995-999. https://doi.org/10.1109/iadcc.2014.6779459
+
+\bibitem{b6} Said, S., AlKork, S., Beyrouthy, T., Hassan, M., Abdellatif, O., Abdraboo, M.F. (2018). Real time eye tracking and detection- a driving assistance system. Advances in Science, Technology and Engineering Systems Journal, 3(6): 446-454. https://doi.org/10.25046/aj030653.
+
+\bibitem{b7} Kumar, A., \& Patra, R. (2018, April). Driver drowsiness monitoring system using visual behaviour and machine learning. In 2018 IEEE Symposium on Computer Applications \& Industrial Electronics (ISCAIE) (pp. 339-344). IEEE.
+
+\bibitem{b8} Pratama, B. G., Ardiyanto, I., \& Adji, T. B. (2017, July). A review on driver drowsiness based on image, bio-signal, and driver behavior. In 2017 3rd International Conference on Science and Technology-Computer (ICST) (pp. 70-75). IEEE.
+
+\bibitem{b9} Bamidele, A. A., Kamardin, K., Abd Aziz, N. S. N., Sam, S. M., Ahmed, I. S., Azizan, A., ... \& Kaidi, H. M. (2019). Non-intrusive driver drowsiness detection based on face and eye tracking. International Journal of Advanced Computer Science and Applications, 10(7).
+
+\bibitem{b10} Manu, B. N. (2016, November). Facial features monitoring for real time drowsiness detection. In 2016 12th International Conference on Innovations in information technology (IIT) (pp. 1-4). IEEE.
+
+\end{thebibliography}
+
+\end{document}
